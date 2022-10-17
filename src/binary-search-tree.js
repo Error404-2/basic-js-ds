@@ -76,14 +76,12 @@ class BinarySearchTree {
         return node;
       }
       if (data < node.data) {
-        getData(left.node, data);
+        return getData(node.left, data);
       }
       if (data > node.data) {
-        getData(right.node, data);
+        return getData(node.right, data);
       }
     }
-
-
     // remove line with error and write your code here
   }
 
@@ -154,14 +152,15 @@ module.exports = {
 };
 
 const tree = new BinarySearchTree();
-tree.add(1);
 tree.add(2);
-tree.add(3);
+tree.add(7);
+tree.add(1);
+tree.add(8);
 tree.add(4);
-tree.add(5);
-console.log(tree.root().data); //=> 1;
-console.log(tree.min()); //=> 1
-console.log(tree.max()); //=> 5
-tree.remove(5);
-console.log(tree.has(5)); //=> false
-console.log(tree.max()); //=> 4 * /
+tree.add(32);
+tree.add(12);
+tree.add(14);
+console.log(tree.find(8).data); //, 8);
+console.log(tree.find(2).data);//, 2);
+console.log(tree.find(32).data);//, 32);
+console.log(tree.find(14).data);//, 14);
